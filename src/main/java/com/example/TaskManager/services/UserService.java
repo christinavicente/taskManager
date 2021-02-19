@@ -20,6 +20,16 @@ public class UserService {
         return userRepo.findById(id);
     }
 
+    public User getUserByName(String name){
+        User users=null;
+        for(User user:getAllUsers()){
+            if (user.getName().equals(name)){
+                users=user;
+            }
+        }
+        return users;
+    }
+
     public User addUser(User user){return userRepo.save(user);}
 
     public void deleteUser(User user){userRepo.delete(user);}
