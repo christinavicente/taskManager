@@ -1,8 +1,8 @@
 package com.example.TaskManager.Controllers;
 
 import com.example.TaskManager.entities.Task;
-import com.example.TaskManager.entities.User;
 import com.example.TaskManager.exceptions.TaskNotFoundException;
+import com.example.TaskManager.exceptions.UserNotFoundException;
 import com.example.TaskManager.services.TaskService;
 import com.example.TaskManager.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,7 +85,7 @@ public class TaskController {
         task.setSeverity(severity);
         task.setUser(userService.getUserByName(userName));
         if(task.getUser()==null){
-            //TODO create UserNotFoundException
+            throw new UserNotFoundException(userName);
         }
         taskService.addTask(task);
         return "create-task";
@@ -111,7 +111,7 @@ public class TaskController {
         task.setSeverity(severity);
         task.setUser(userService.getUserByName(userName));
         if(task.getUser()==null){
-            //TODO create UserNotFoundException
+            throw new UserNotFoundException(userName);
         }
         taskService.addTask(task);
         return "update-task";

@@ -16,7 +16,8 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String getCredentials(ModelMap model, @RequestParam String name, @RequestParam String password ){
+    public String getCredentials(ModelMap model, @RequestParam String name,
+                                 @RequestParam String password ){
         User user;
         if(authenticate(name,password)){
             model.addAttribute("Username", name);
@@ -25,7 +26,25 @@ public class LoginController {
             model.put("Error", "Not-Found-Error");
         }
 
-        return "login";
+        return "error";
+    }
+
+    @RequestMapping(value = "/new-user", method = RequestMethod.POST)
+    public String createNewUser(ModelMap model, @RequestParam String name,
+                                @RequestParam String password, @RequestParam String email){
+        User user;
+        if(userService.getUserByName(name)==null){
+            user=new User();
+            user.setName(name);
+            user.setPassword(password);
+            user.setEmail(email);
+            userService.addUser(user);
+            return "new-user";
+        }else {
+            model.put("Error", "Already-exists-error");
+        }
+
+        return "error";
     }
 
     @RequestMapping(value = "/login", method=RequestMethod.GET)
