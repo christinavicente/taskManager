@@ -48,18 +48,19 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method=RequestMethod.GET)
-    public String loadTasks(){
+    public String loadTasksFromLogin(){
 
         return "display-tasks";
     }
 
 
+    @RequestMapping(value = "new-user", method = RequestMethod.GET)
+    public String loadLoginFromNewUser(){
 
-    public String displayLoggedIn(){
-
-        return "success";
+        return "login";
     }
 
+    @RequestMapping(value = "error", method = RequestMethod.GET)
     public String displayError(){
 
         return "error";
