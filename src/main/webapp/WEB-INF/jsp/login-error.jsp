@@ -5,7 +5,9 @@
 </head>
 
 <body>
-	<h1>Successfully Logged On</h1>
+	<h1>Something went wrong!</h1>
+	${Error}
+
 </body>
 
 </html>
