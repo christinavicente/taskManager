@@ -19,7 +19,7 @@
 	    <br/>
 	        <td>New Email:</td>
 	        <td><input type = "text" name = "email"</td>
-	    <input type = "submit" value = "Create user" />
+	    <input type = "submit" value = "new-user" />
 	</table>
 
 </body>

@@ -56,7 +56,7 @@ public class TaskController {
 
     //POSTMAPPING------------------------------------------------------
 
-    @RequestMapping(value = "/delete-task", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete-tasks", method = RequestMethod.POST)
     public String submitDeleteTask(ModelMap model, @RequestParam Integer id, @RequestParam String agree){
         int ID=id;
         if(agree.equals("yes")) {
@@ -72,7 +72,7 @@ public class TaskController {
     }
 
 
-    @RequestMapping(value = "/create-task", method = RequestMethod.POST)
+    @RequestMapping(value = "/create-tasks", method = RequestMethod.POST)
     public String submitCreateTask(ModelMap model, @RequestParam String name,
                                    @RequestParam Date startdate, @RequestParam Date enddate,
                                    @RequestParam String description, @RequestParam String email,
@@ -92,7 +92,7 @@ public class TaskController {
         taskService.addTask(task);
         return "create-task";
     }
-    @RequestMapping(value = "/update-tast", method = RequestMethod.POST)
+    @RequestMapping(value = "/update-tasks", method = RequestMethod.POST)
     public String submitUpdateTask(ModelMap model, @RequestParam Integer taskID,
                                    @RequestParam String name, @RequestParam Date startdate,
                                    @RequestParam Date enddate, @RequestParam String description,
@@ -117,6 +117,18 @@ public class TaskController {
         }
         taskService.addTask(task);
         return "update-task";
+    }
+
+    @RequestMapping(value = "/display-tasks", method = RequestMethod.POST)
+    public String submitDisplayTask(ModelMap model, @RequestParam String action){
+        if(action.equals("delete")){
+            return "delete-tasks";
+        }else if(action.equals("update")){
+            return "update-tasks";
+        }else {
+            return "create-tasks";
+        }
+
     }
 
 

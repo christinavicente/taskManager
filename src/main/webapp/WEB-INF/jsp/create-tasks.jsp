@@ -7,6 +7,7 @@
 <body>
 	<h1>Create New Task</h1>
 
+        <form action = "<%=request.getContextPath()%>/create-tasks" method= "post" >
 	    	<table>
         	    <tr>
         	        <td>Task Name: </td>
@@ -35,7 +36,7 @@
         	    <br/>
         	        <td>User assigned to task: </td>
         	        <td><input type = "text" name = "userName"</td>
-        	    <input type = "submit" value = "Create user" />
+        	    <input type = "submit" value = "create-tasks" />
         	</table>
 
 

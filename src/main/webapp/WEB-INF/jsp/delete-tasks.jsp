@@ -20,7 +20,7 @@
     	        <td>yes</td><td><input type = "radio" name = "agree" value="yes"/></td>
     	        <td>no</td><input type: "radio" name= "agree" value="no" checked/></td>
     	    <br/>
-    	    <input type = "submit" value = "Login" />
+    	    <input type = "submit" value = "delete task" />
     	</table>
 </body>
 

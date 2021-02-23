@@ -43,7 +43,7 @@
     	    <br/>
     	        <td>User assigned to task</td>
     	        <td><input type = "text" name = "userName"</td>
-    	    <input type = "submit" value = "Create user" />
+    	    <input type = "submit" value = "update task" />
     	</table>
 
 
