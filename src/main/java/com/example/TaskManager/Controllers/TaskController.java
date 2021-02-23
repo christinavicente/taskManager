@@ -57,14 +57,16 @@ public class TaskController {
     //POSTMAPPING------------------------------------------------------
 
     @RequestMapping(value = "/delete-task", method = RequestMethod.POST)
-    public String submitDeleteTask(ModelMap model, @RequestParam String id){
-        int ID=Integer.valueOf(id);
-        Optional<Task> oTask=taskService.getTaskByID(ID);
-        if(oTask.isPresent()){
-            Task task= oTask.get();
-            taskService.deleteTask(task);
-        }else{
-            model.put("Error", "not-found-error");
+    public String submitDeleteTask(ModelMap model, @RequestParam Integer id, @RequestParam String agree){
+        int ID=id;
+        if(agree.equals("yes")) {
+            Optional<Task> oTask = taskService.getTaskByID(ID);
+            if (oTask.isPresent()) {
+                Task task = oTask.get();
+                taskService.deleteTask(task);
+            } else {
+                model.put("Error", "not-found-error");
+            }
         }
         return "display-tasks";
     }
