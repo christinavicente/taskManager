@@ -15,36 +15,37 @@
     	        <td>Task ID: </td>
     	        <td><input type = "number" name= "taskID" /></td>
     	    </tr>
-    	    <br/>
+    	    
     	    <tr>
     	        <td>Task Name: </td>
     	        <td><input type = "text" name= "name" /></td>
     	    </tr>
-    	    <br/>
     	    <tr>
-    	        <td>Task ID: </td>
+    	        <td>Task Start Date: </td>
     	        <td><input type = "date" name= "startdate" /></td>
     	    </tr>
-    	    <br/>
-    	        <td>Task ID: </td>
+    	    <tr>
+    	        <td>Task End Date: </td>
     	        <td><input type = "date" name= "enddate" /></td>
     	    </tr>
-    	    <br/>
+    	    <tr>
     	        <td>Description: </td>
     	        <td><input type = "text" name = "description"/></td>
-    	    <br/>
-    	    <br/>
+    	    </tr>
+    	    <tr>
     	        <td>email: </td>
     	        <td><input type = "text" name = "email"/></td>
-    	    <br/>
-    	    <br/>
+    	    </tr>
+    	    <tr>
     	        <td>severity: </td>
     	        <td><input type = "text" name = "severity"/></td>
-    	    <br/>
+    	    </tr>
+	    <tr>	
     	        <td>User assigned to task</td>
     	        <td><input type = "text" name = "userName"</td>
-    	    <input type = "submit" value = "update task" />
+    	    
     	</table>
+	<input type = "submit" value = "update task" />
 
 
 </body>
