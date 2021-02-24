@@ -27,20 +27,25 @@ public class TaskController {
 
     @RequestMapping(value = "/display-tasks", method = RequestMethod.GET)
     public String displayTasks(ModelMap model) {
+        System.out.println("display tasks: get");
         String name = (String) model.get("name");
         Iterable<Task> tasks = taskService.GetAllTasks();
-
+        for(Task task:tasks){
+            System.out.println(task.toString());
+        }
         model.put("tasks", taskService.GetAllTasks());
         return "display-tasks";
     }
 
     @RequestMapping(value = "/create-task", method = RequestMethod.GET)
     public String showCreateTask(ModelMap model){
+        System.out.println("update tasks: get");
         return "display-task";
     }
 
     @RequestMapping(value = "/update-task", method = RequestMethod.GET)
     public String showUpdateTask(ModelMap model){
+        System.out.println("update tasks: get");
         Integer id=(Integer)model.get("taskID");
         Optional<Task> task;
         try {
@@ -48,16 +53,19 @@ public class TaskController {
         }catch (TaskNotFoundException e) {
             model.put("Error", "not-found-error");
         }
-        return "display-task";
+        return "create-task";
     }
 
     @RequestMapping
-    public String showDeleteTask(ModelMap model){ return "display-task";}
+    public String showDeleteTask(ModelMap model){
+        System.out.println("delete tasks: get");
+        return "display-task";}
 
     //POSTMAPPING------------------------------------------------------
 
     @RequestMapping(value = "/delete-tasks", method = RequestMethod.POST)
     public String submitDeleteTask(ModelMap model, @RequestParam Integer id, @RequestParam String agree){
+        System.out.println("delete tasks: post");
         int ID=id;
         if(agree.equals("yes")) {
             Optional<Task> oTask = taskService.getTaskByID(ID);
@@ -77,6 +85,7 @@ public class TaskController {
                                    @RequestParam Date startdate, @RequestParam Date enddate,
                                    @RequestParam String description, @RequestParam String email,
                                    @RequestParam String severity, @RequestParam String userName){
+        System.out.println("create tasks: post");
         model.put("name", name);
         Task task=new Task();
         task.setName(name);
@@ -92,12 +101,14 @@ public class TaskController {
         taskService.addTask(task);
         return "create-task";
     }
+
     @RequestMapping(value = "/update-tasks", method = RequestMethod.POST)
     public String submitUpdateTask(ModelMap model, @RequestParam Integer taskID,
                                    @RequestParam String name, @RequestParam Date startdate,
                                    @RequestParam Date enddate, @RequestParam String description,
                                    @RequestParam String email, @RequestParam String severity,
                                    @RequestParam String userName){
+        System.out.println("create tasks: post");
         try {
             taskService.getTaskByID(taskID);
             }catch (Exception e){
@@ -121,12 +132,13 @@ public class TaskController {
 
     @RequestMapping(value = "/display-tasks", method = RequestMethod.POST)
     public String submitDisplayTask(ModelMap model, @RequestParam String action){
+        System.out.println("display tasks: post");
         if(action.equals("delete")){
             return "delete-tasks";
         }else if(action.equals("update")){
             return "update-tasks";
         }else {
-            return "display-tasks";
+            return "create-tasks";
         }
 
     }

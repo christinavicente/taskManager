@@ -25,9 +25,10 @@ Other options:
      	        <td>Create task: </td>
      	    </tr>
      	        <td><input type = "radio" name = "action" value="create"/></td>
+     	    <br/>
+
+    	    <input type = "submit" value = "display-tasks" />
     	</table>
-    <input type = "submit" value = "display-tasks" />
-    <br><br>
 
 
 Here are the list of your tasks:

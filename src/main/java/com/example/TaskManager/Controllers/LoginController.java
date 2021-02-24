@@ -18,6 +18,7 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String getCredentials(ModelMap model, @RequestParam String name,
                                  @RequestParam String password ){
+        System.out.println("user login: post");
         User user;
         if(authenticate(name,password)){
             model.addAttribute("Username", name);
@@ -32,6 +33,7 @@ public class LoginController {
     @RequestMapping(value = "/new-user", method = RequestMethod.POST)
     public String createNewUser(ModelMap model, @RequestParam String name,
                                 @RequestParam String password, @RequestParam String email){
+        System.out.println("new: post");
         User user;
         if(userService.getUserByName(name)==null){
             user=new User();
@@ -49,14 +51,14 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method=RequestMethod.GET)
     public String loadTasksFromLogin(){
-
+        System.out.println("user login: get");
         return "display-tasks";
     }
 
 
     @RequestMapping(value = "new-user", method = RequestMethod.GET)
     public String loadLoginFromNewUser(){
-
+        System.out.println("new user: get");
         return "login";
     }
 

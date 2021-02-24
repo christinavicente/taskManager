@@ -89,5 +89,7 @@ public class Task{
         this.id = id;
     }
 
-    public String toString(){return this.name;}
+    public String toString(){
+        String result= this.name+ "\t" + this.id;
+        return result;}
 }

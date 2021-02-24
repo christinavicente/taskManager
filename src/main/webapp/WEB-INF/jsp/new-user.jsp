@@ -7,21 +7,19 @@
 <body>
 	<form action = "<%=request.getContextPath()%>/new-user" method= "post" >
 	<h1> New User</h1>
-		<table>
+	<table>
 	    <tr>
 	        <td>New User Name: </td>
 	        <td><input type = "text" name= "username" /></td>
 	    </tr>
 	    <br/>
-        <tr>
+
 	        <td>New Password: </td>
 	        <td><input type = "text" name = "password"/></td>
-	    </tr>
 	    <br/>
-	    <tr>
 	        <td>New Email:</td>
 	        <td><input type = "text" name = "email"</td>
-	    <input type = "submit" value = "submit" />
+	    <input type = "submit" value = "new-user" />
 	</table>
 
 </body>
