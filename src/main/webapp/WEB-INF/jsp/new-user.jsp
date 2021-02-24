@@ -12,14 +12,14 @@
 	        <td>New User Name: </td>
 	        <td><input type = "text" name= "username" /></td>
 	    </tr>
-	    <br/>
-
+	    <tr>
 	        <td>New Password: </td>
 	        <td><input type = "text" name = "password"/></td>
-	    <br/>
+	    </tr>
+	    <tr>
 	        <td>New Email:</td>
 	        <td><input type = "text" name = "email"</td>
-	    <input type = "submit" value = "new-user" />
+	    <input type = "submit" value = "submit" />
 	</table>
 
 </body>
