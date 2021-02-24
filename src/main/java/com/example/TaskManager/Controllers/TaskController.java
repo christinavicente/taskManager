@@ -27,19 +27,14 @@ public class TaskController {
 
     @RequestMapping(value = "/display-tasks", method = RequestMethod.GET)
     public String displayTasks(ModelMap model) {
-        System.out.println("display tasks: get");
         String name = (String) model.get("name");
         Iterable<Task> tasks = taskService.GetAllTasks();
-        for(Task task:tasks){
-            System.out.println(task.toString());
-        }
         model.put("tasks", taskService.GetAllTasks());
         return "display-tasks";
     }
 
     @RequestMapping(value = "/create-task", method = RequestMethod.GET)
     public String showCreateTask(ModelMap model){
-        System.out.println("update tasks: get");
         return "display-task";
     }
 
@@ -53,13 +48,11 @@ public class TaskController {
         }catch (TaskNotFoundException e) {
             model.put("Error", "not-found-error");
         }
-        return "create-task";
+        return "display-tasks";
     }
 
     @RequestMapping
-    public String showDeleteTask(ModelMap model){
-        System.out.println("delete tasks: get");
-        return "display-task";}
+    public String showDeleteTask(ModelMap model){return "display-tasks";}
 
     //POSTMAPPING------------------------------------------------------
 
@@ -85,7 +78,6 @@ public class TaskController {
                                    @RequestParam Date startdate, @RequestParam Date enddate,
                                    @RequestParam String description, @RequestParam String email,
                                    @RequestParam String severity, @RequestParam String userName){
-        System.out.println("create tasks: post");
         model.put("name", name);
         Task task=new Task();
         task.setName(name);
@@ -108,7 +100,6 @@ public class TaskController {
                                    @RequestParam Date enddate, @RequestParam String description,
                                    @RequestParam String email, @RequestParam String severity,
                                    @RequestParam String userName){
-        System.out.println("create tasks: post");
         try {
             taskService.getTaskByID(taskID);
             }catch (Exception e){
@@ -136,7 +127,7 @@ public class TaskController {
         if(action.equals("delete")){
             return "delete-tasks";
         }else if(action.equals("update")){
-            return "update-tasks";
+            return "display-tasks";
         }else {
             return "create-tasks";
         }
