@@ -23,23 +23,27 @@
         	        <td><input type = "date" name= "enddate" /></td>
         	    </tr>
         	    <br/>
+        	    <tr>
         	        <td>Description: </td>
         	        <td><input type = "text" name = "description"/></td>
+        	   </tr>
         	    <br/>
-        	    <br/>
+        	    <tr>
         	        <td>email: </td>
         	        <td><input type = "text" name = "email"/></td>
+        	    </tr>
         	    <br/>
-        	    <br/>
+        	    <tr>
         	        <td>severity: </td>
         	        <td><input type = "text" name = "severity"/></td>
+        	     </tr>
         	    <br/>
+        	    <tr>
         	        <td>User assigned to task: </td>
         	        <td><input type = "text" name = "userName"</td>
-        	    <input type = "submit" value = "create-tasks" />
+        	   
         	</table>
-
-
+             <input type = "submit" value = "create-tasks" />
 
 
 </body>
