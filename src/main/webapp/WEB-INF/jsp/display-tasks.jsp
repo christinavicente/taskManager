@@ -14,21 +14,20 @@ Other options:
     	    <tr>
     	        <td>Delete task: </td>
     	    </tr>
+            <tr>
     	        <td><input type = "radio" name = "action" value="delete"/></td>
-    	    <br/>
+            </tr>
     	    <tr>
     	        <td>Update task: </td>
     	    </tr>
     	        <td><input type = "radio" name = "action" value="update"/></td>
-    	    <br/>
+            </tr>
      	    <tr>
      	        <td>Create task: </td>
      	    </tr>
      	        <td><input type = "radio" name = "action" value="create"/></td>
-     	    <br/>
-
-    	    <input type = "submit" value = "display-tasks" />
     	</table>
+        <input type = "submit" value = "display-tasks" />
 
 
 Here are the list of your tasks:
