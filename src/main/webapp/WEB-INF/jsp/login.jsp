@@ -12,13 +12,15 @@
 	        <td>User Name: </td>
 	        <td><input type = "text" name= "username" /></td>
 	    </tr>
-	    <br/>
+	    
 
 	        <td>Password: </td>
 	        <td><input type = "text" name = "password"/></td>
-	    <br/>
-	    <input type = "submit" value = "Login" />
-	</table>
+	</table>    
+	<input type = "submit" value = "Login" />
+	New User: <form action = "new-user.jsp">
+	<input type="submit" value="New User/>
+	
 </body>
 
 </html>
