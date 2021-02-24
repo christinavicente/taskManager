@@ -19,6 +19,8 @@
 	    <br/>
 	    <input type = "submit" value = "Login" />
 	</table>
+	New User: <form action="new-user.jsp">
+	<input type="submit" value="New User"/>
 </body>
 
 </html>
