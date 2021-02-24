@@ -48,7 +48,7 @@ public class TaskController {
         }catch (TaskNotFoundException e) {
             model.put("Error", "not-found-error");
         }
-        return "create-task";
+        return "display-task";
     }
 
     @RequestMapping
@@ -68,7 +68,7 @@ public class TaskController {
                 model.put("Error", "not-found-error");
             }
         }
-        return "display-tasks";
+        return "delete-tasks";
     }
 
 
@@ -126,7 +126,7 @@ public class TaskController {
         }else if(action.equals("update")){
             return "update-tasks";
         }else {
-            return "create-tasks";
+            return "display-tasks";
         }
 
     }
